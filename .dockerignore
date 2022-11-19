@@ -1,0 +1,12 @@
+__tests__
+.ignore
+.git
+coverage
+jest.config.js
+node_modules
+.gitignore
+docker-compose.yml
+npm-debug.log
+.env
+.DS_Store
+.vscode
