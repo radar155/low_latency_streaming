@@ -18,5 +18,5 @@ services:
       - "9999:9999/udp"
     deploy:
       restart_policy:
-        condition: any
+        condition: unless-stopped
         delay: 0s
