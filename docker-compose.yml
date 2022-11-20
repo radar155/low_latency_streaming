@@ -12,7 +12,7 @@ services:
   ome:
     image: "airensoft/ovenmediaengine:0.14.15"
     #volumes:
-    #  - ./ome/Server.xml:/opt/ovenmediaengine/bin/origin_conf/Server.xml
+    #  - ./ome/Server_abr.xml:/opt/ovenmediaengine/bin/origin_conf/Server.xml
     ports:
       - "1935:1935"
       - "4000:4000/udp"
