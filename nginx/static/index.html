@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ovenplayer/dist/ovenplayer.js"></script>
     <!-- Wrapper element for sizing or positioning the player -->
     <div class="player-wrapper">
@@ -22,9 +23,14 @@
             "autoStart": true,
             "autoFallback": true,
             "mute": false,
-            "sources": [{
+            "sources": [
+            {
                 "type": "webrtc",
                 "file": `ws://${host}:3333/app/stream`
+            },
+            {
+                "type": "hls",
+                "file": `http://${host}:3333/app/stream/llhls.m3u8`
             }]
         });
     </script>
