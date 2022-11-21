@@ -182,78 +182,84 @@
                                         <Type>live</Type>
                                         <OutputProfiles>
                                                 <OutputProfile>
-                                                        <Name>bypass_stream</Name>
+                                                        <Name>default</Name>
                                                         <OutputStreamName>${OriginStreamName}</OutputStreamName>
-                                                        <!--LLHLS URL : https://domain/app/stream/abr.m3u8 -->
+
                                                         <Playlist>
-                                                                <Name>For LLHLS</Name>
+                                                                <Name>for WebRTC</Name>
                                                                 <FileName>abr</FileName>
-                                                                <Options>                                                                        <!-- Optinal -->
-                                                                        <!-- 
-			Automatically switch rendition in WebRTC ABR 
-			[Default] : true
-			-->
-                                                                        <WebRtcAutoAbr>true</WebRtcAutoAbr>
+                                                                <Options>
+                                                                        <WebRtcAutoAbr>false</WebRtcAutoAbr>
                                                                 </Options>
                                                                 <Rendition>
-                                                                        <Name>Bypass</Name>
+                                                                        <Name>Original</Name>
+                                                                        <Video>bypass_video</Video>
+                                                                        <Audio>opus</Audio>
+                                                                </Rendition>
+                                                                <Rendition>
+                                                                        <Name>720p</Name>
+                                                                        <Video>720p</Video>
+                                                                        <Audio>opus</Audio>
+                                                                </Rendition>
+                                                                <Rendition>
+                                                                        <Name>480p</Name>
+                                                                        <Video>480p</Video>
+                                                                        <Audio>opus</Audio>
+                                                                </Rendition>
+                                                                
+                                                        </Playlist>
+                                                        <Playlist>
+                                                                <Name>for llhls</Name>
+                                                                <FileName>llhls_abr</FileName>
+                                                                <Rendition>
+                                                                        <Name>Original</Name>
                                                                         <Video>bypass_video</Video>
                                                                         <Audio>bypass_audio</Audio>
                                                                 </Rendition>
                                                                 <Rendition>
-                                                                        <Name>FHD</Name>
-                                                                        <Video>video_1280</Video>
+                                                                        <Name>720p</Name>
+                                                                        <Video>720p</Video>
                                                                         <Audio>bypass_audio</Audio>
                                                                 </Rendition>
                                                                 <Rendition>
-                                                                        <Name>HD</Name>
-                                                                        <Video>video_720</Video>
+                                                                        <Name>480p</Name>
+                                                                        <Video>480p</Video>
                                                                         <Audio>bypass_audio</Audio>
                                                                 </Rendition>
                                                         </Playlist>
-                                                        <!--LLHLS URL : https://domain/app/stream/llhls.m3u8 -->
-                                                        <Playlist>
-                                                                <Name>Change Default</Name>
-                                                                <FileName>llhls</FileName>
-                                                                <Rendition>
-                                                                        <Name>HD</Name>
-                                                                        <Video>video_720</Video>
-                                                                        <Audio>bypass_audio</Audio>
-                                                                </Rendition>
-                                                        </Playlist>
+
                                                         <Encodes>
-                                                                <Audio>
-                                                                        <Name>bypass_audio</Name>
-                                                                        <Bypass>true</Bypass>
-                                                                </Audio>
                                                                 <Video>
                                                                         <Name>bypass_video</Name>
                                                                         <Bypass>true</Bypass>
                                                                 </Video>
+                                                                <Video>
+                                                                        <Name>480p</Name>
+                                                                        <Codec>h264</Codec>
+                                                                        <Width>854</Width>
+                                                                        <Height>480</Height>
+                                                                        <Bitrate>500000</Bitrate>
+                                                                        <Framerate>30</Framerate>
+                                                                </Video>
+                                                                <Video>
+                                                                        <Name>720p</Name>
+                                                                        <Codec>h264</Codec>
+                                                                        <Width>1280</Width>
+                                                                        <Height>720</Height>
+                                                                        <Bitrate>2000000</Bitrate>
+                                                                        <Framerate>30</Framerate>
+                                                                </Video>
                                                                 <Audio>
+                                                                        <Name>bypass_audio</Name>
+                                                                        <Bypass>True</Bypass>
+                                                                </Audio>
+                                                                <Audio>
+                                                                        <Name>opus</Name>
                                                                         <Codec>opus</Codec>
                                                                         <Bitrate>128000</Bitrate>
                                                                         <Samplerate>48000</Samplerate>
                                                                         <Channel>2</Channel>
                                                                 </Audio>
-                                                                <Video>
-                                                                        <Name>video_1280</Name>
-                                                                        <Codec>h264</Codec>
-                                                                        <Bitrate>5024000</Bitrate>
-                                                                        <Framerate>30</Framerate>
-                                                                        <Width>1920</Width>
-                                                                        <Height>1280</Height>
-                                                                        <Preset>faster</Preset>
-                                                                </Video>
-                                                                <Video>
-                                                                        <Name>video_720</Name>
-                                                                        <Codec>h264</Codec>
-                                                                        <Bitrate>2024000</Bitrate>
-                                                                        <Framerate>30</Framerate>
-                                                                        <Width>1280</Width>
-                                                                        <Height>720</Height>
-                                                                        <Preset>faster</Preset>
-                                                                </Video>
                                                         </Encodes>
                                                 </OutputProfile>
                                         </OutputProfiles>
