@@ -10,7 +10,7 @@ services:
     depends_on:
     - ome
   ome:
-    image: "airensoft/ovenmediaengine:0.14.15"
+    image: "airensoft/ovenmediaengine:0.15.10"
     #volumes:
       #- ./ome/Server_abr_original_720_480.xml:/opt/ovenmediaengine/bin/origin_conf/Server.xml
       #- ./ome/Server_only_webrtc.xml:/opt/ovenmediaengine/bin/origin_conf/Server.xml
