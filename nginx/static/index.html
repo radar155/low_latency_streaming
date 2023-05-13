@@ -1,39 +1,39 @@
+<!DOCTYPE html>
 <html>
+    <head>
+        <style>
+            .player-wrapper {
+                margin: 0 auto;
+                width: 1280px;
+            }
+        </style>
+    </head>
 
-<head>
-    <style>
-        .player-wrapper {
-            margin: 0 auto;
-            width: 1280px;
-        }
-    </style>
-</head>
-
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ovenplayer/dist/ovenplayer.js"></script>
-    <!-- Wrapper element for sizing or positioning the player -->
-    <div class="player-wrapper">
-        <!-- OvenPlayer will be initialized inside this element. -->
-        <div id="player_id"></div>
-    </div>
-    <script>
-        const host = window.location.host.split(':')[0]
-        const player = OvenPlayer.create("player_id", {
-            "autoStart": true,
-            "autoFallback": true,
-            "mute": false,
-            "sources": [
-            {
-                "type": "webrtc",
-                "file": `ws://${host}:3333/app/stream`
-            },
-            {
-                "type": "hls",
-                "file": `http://${host}:3333/app/stream/llhls.m3u8`
-            }]
-        });
-    </script>
-</body>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/ovenplayer/dist/ovenplayer.js"></script>
+        <!-- Wrapper element for sizing or positioning the player -->
+        <div class="player-wrapper">
+            <!-- OvenPlayer will be initialized inside this element. -->
+            <div id="player_id"></div>
+        </div>
+        <script>
+            const host = window.location.host.split(':')[0]
+            const player = OvenPlayer.create("player_id", {
+                "autoStart": true,
+                "autoFallback": true,
+                "mute": false,
+                "sources": [
+                {
+                    "type": "webrtc",
+                    "file": `ws://${host}:3333/app/stream`
+                },
+                {
+                    "type": "hls",
+                    "file": `http://${host}:3333/app/stream/llhls.m3u8`
+                }]
+            });
+        </script>
+    </body>
 
 </html>
